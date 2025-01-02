@@ -60,7 +60,7 @@ router.post('/tasks', auth, async(req,res)=>{
             owner: req.user._id
         });
         let result = await task1.save();
-        res.send(result);
+        res.status(201).send(result);
     }catch(e){
         res.status(500).send(e)
     }
